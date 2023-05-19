@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-color: black;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    
+    button {
+      position: fixed;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      background: transparent;
+      color: gray;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    #text-container {
+      position: fixed;
+      font-family: monospace;
+      top: 50%;
+      left: 5%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 70px;
+    }
+  </style>
+  <script>
+    var images = ["Imagenes/1.jpeg", "Imagenes/2.jpeg", "Imagenes/3.jpeg", "Imagenes/4.jpeg", "Imagenes/5.jpeg", "Imagenes/6.jpeg", "Imagenes/7.jpeg", "Imagenes/8.jpeg", "Imagenes/9.jpeg",
+    "Imagenes/10.jpeg", "Imagenes/11.jpeg", "Imagenes/12.jpeg", "Imagenes/13.jpeg","Imagenes/14.jpeg", "Imagenes/15.jpeg", "Imagenes/16.jpeg", "Imagenes/17.jpeg", "Imagenes/18.jpeg", "Imagenes/19.jpeg"]; // Ruta de las imágenes
+    var texts = ["POR QUE", "CADA", "QUE","PIENSO", "EN TI", "EN LO UNICO","EN LO QUE", "PUEDO", "PENSAR","ES", "EN", "LO","MUCHO", "QUE", "ME","HACES", "FELIZ", "TE AMO","<3"]; // Textos correspondientes a las imágenes
+    var currentImage = 0;
+
+    function changeBackground() {
+      currentImage = (currentImage + 1) % images.length;
+      document.body.style.backgroundImage = "url(" + images[currentImage] + ")";
+      document.getElementById("text-container").innerText = texts[currentImage];
+    }
+    setInterval(changeBackground, 1000); 
+  </script>
+</head>
+<body>
+    <div id="text-container">Texto 1</div> 
+  <script>
+    // Establecer la imagen de fondo inicial y el texto
+    document.body.style.backgroundImage = "url(" + images[currentImage] + ")";
+    document.getElementById("text-container").innerText = texts[currentImage];
+  </script>
+</body>
+</html>
